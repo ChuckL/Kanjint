@@ -3,6 +3,6 @@
  */
 public class Main{
     public static void main(String[] args){
-        System.out.println("Foob");
+        KanjiUtil.kanjiToInteger("五千九百七十二");
     }
 }
