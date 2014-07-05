@@ -12,9 +12,20 @@ public class KanjiUtilTest extends TestCase {
         Assert.assertEquals(5972, KanjiUtil.kanjiToInteger("五千九百七十二"));
         Assert.assertEquals(10, KanjiUtil.kanjiToInteger("十"));
         Assert.assertEquals(50, KanjiUtil.kanjiToInteger("五十"));
+        Assert.assertEquals(500000, KanjiUtil.kanjiToInteger("五十万"));
 
+
+        assertCatchKanji("");
+        assertCatchKanji("1");
+        assertCatchKanji("10");
+        assertCatchKanji("ichi");
+
+        new KanjiUtil();
+    }
+
+    private void assertCatchKanji(String kanji){
         try{
-            KanjiUtil.kanjiToInteger("10");
+            KanjiUtil.kanjiToInteger(kanji);
         } catch (NumberFormatException e){
             Assert.assertTrue(true);
         }
