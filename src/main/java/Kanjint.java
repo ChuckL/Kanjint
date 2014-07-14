@@ -1,7 +1,9 @@
 /**
+ * Converts a string of UTF-8 kanji to an integer.
+ * Currently only supports up to 万.
  * Created by Chuck on 6/29/2014.
  */
-public class KanjiUtil {
+public class Kanjint {
     public static int kanjiToInteger(String kanji) throws NumberFormatException
     {
         if(kanji.equals("")){
@@ -58,8 +60,14 @@ public class KanjiUtil {
         return singleKanjiToInt("" + kanji);
     }
 
-    public static int singleKanjiToInt(String kanji){
-
+    /**
+     * Converts a single kanji to it's integer representation.
+     * @param kanji is a single kanji.
+     * @throws NumberFormatException if the kanji is an unsupported or is not a valid kanji character.
+     * @return
+     */
+    public static int singleKanjiToInt(String kanji) throws NumberFormatException
+    {
         if(kanji.equals("一")) return 1;
         if(kanji.equals("二")) return 2;
         if(kanji.equals("三")) return 3;
